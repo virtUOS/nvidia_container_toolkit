@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: nvidia_container_toolkit
+  namespace: uos
+  author: Timo Nogueira Brockmeyer
+  description: Install nvidia container toolkit
+  company: Osnabrück University
+  license: BSD-3-Clause
+  min_ansible_version: "0.1"
+dependencies:
+  - elan.docker_install
+  - nvidia_driver_cuda
