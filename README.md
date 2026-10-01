@@ -7,7 +7,7 @@ Installs and configures the [NVIDIA Container Toolkit](https://docs.nvidia.com/d
 1. Adds the official NVIDIA Container Toolkit RPM repository.
 2. Installs the `nvidia-container-toolkit` package.
 3. Configures `/etc/docker/daemon.json` with the NVIDIA runtime.
-4. Restarts Docker when the daemon configuration changes.
+4. Reloads Docker when the daemon configuration changes (running containers keep running).
 
 ## Requirements
 
@@ -51,7 +51,7 @@ Installs and configures the [NVIDIA Container Toolkit](https://docs.nvidia.com/d
 
 ## Handlers
 
-- **Restart Docker:** Triggered when /etc/docker/daemon.json is modified.
+- **Reload Docker:** Triggered when /etc/docker/daemon.json is modified. Every key the template sets is one dockerd applies on reload, so no container is restarted.
 
 ## Important Notes
 

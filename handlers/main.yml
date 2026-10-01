@@ -1,5 +1,8 @@
 ---
-- name: Restart Docker
+# Reload, not restart: both keys the template sets (default-runtime,
+# runtimes) are ones dockerd applies on SIGHUP, while a restart stops every
+# running container on the host. If docker is not running, Ansible starts it.
+- name: Reload Docker
   ansible.builtin.systemd:
     name: docker
-    state: restarted
+    state: reloaded
